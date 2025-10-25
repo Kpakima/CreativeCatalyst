@@ -1,0 +1,68 @@
+.about {
+  padding: 9.6rem 0rem;
+
+  &__container {
+    @include col-1-of-2;
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0rem 3.2rem;
+  }
+
+  &__img-box {
+    position: relative;
+    transform: translateY(3rem);
+
+    &:hover .about__img:not(:hover) {
+      transform: scale(0.8);
+    }
+  }
+
+  &__img {
+    max-width: 50%;
+    height: auto;
+    box-shadow: 0rem 1.2rem 6rem rgba($color-black, 0.5);
+    transition: all 0.3s;
+    outline-offset: 2rem;
+    position: absolute;
+
+    &--1 {
+      left: 10rem;
+      top: 0;
+    }
+
+    &--2 {
+      top: 6rem;
+      right: 0rem;
+    }
+
+    &--3 {
+      left: 20rem;
+      bottom: 5rem;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      z-index: 10;
+      outline: 1rem solid $color-primary;
+      box-shadow: 0rem 2.4rem 6rem rgba($color-black, 0.5);
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    margin-bottom: 1.6rem;
+  }
+
+  &__table {
+    display: flex;
+    gap: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+}

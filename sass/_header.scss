@@ -1,0 +1,178 @@
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 50dvh;
+  background-color: rgba($color-black, 0.8);
+
+  &__bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 100;
+
+    &--content {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  &__logo {
+    height: 6rem;
+  }
+
+  &__nav {
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 3.2rem;
+  }
+
+  &__mobile-btn {
+    background: none;
+    border: none;
+
+    &--close {
+      display: none;
+    }
+
+    &--burger {
+      display: none;
+    }
+  }
+
+  &__mobile-icon {
+    fill: $color-white;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__nav-link:link,
+  &__nav-link:visited {
+    color: $color-white;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: inherit;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.2;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 10%;
+      height: 2px;
+      background-color: $color-primary;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, width 0.3s 0.2s, visibility 0.3s;
+    }
+  }
+
+  &__nav-link:hover,
+  &__nav-link:active {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  &__nav-link--active:link,
+  &__nav-link--active:visited {
+    &::after {
+      opacity: 1;
+      width: 100%;
+      visibility: visible;
+    }
+  }
+
+  &__form-box {
+    display: none;
+    flex-basis: 25%;
+
+    &.display-form {
+      display: block;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    border-bottom: 1px solid $color-white;
+    display: flex;
+    transition: all 0.3s;
+  }
+
+  &__form-input {
+    flex-basis: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.6rem;
+    padding: 1rem 4rem 1rem 1rem;
+    color: $color-white;
+
+    &::-webkit-input-placeholder {
+      color: $color-white;
+    }
+  }
+
+  &__form-btn {
+    border: none;
+    margin-left: -4rem;
+    background: none;
+    outline: none;
+
+    &:hover > * {
+      fill: rgba($color-white, 0.5);
+      cursor: pointer;
+    }
+  }
+
+  &__form-icon {
+    fill: $color-white;
+    transition: all 0.3s;
+  }
+
+  &__show-form-btn {
+    background: none;
+    border: none;
+    // display: none;
+
+    & > * {
+      fill: $color-white;
+      transition: all 0.3s;
+    }
+
+    &:hover > * {
+      fill: rgba($color-white, 0.5);
+    }
+  }
+}

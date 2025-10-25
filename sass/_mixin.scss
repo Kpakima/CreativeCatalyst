@@ -1,0 +1,5 @@
+@mixin col-1-of-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.4rem;
+}
